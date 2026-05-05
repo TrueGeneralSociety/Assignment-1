@@ -171,7 +171,11 @@ app.get("/members", (req, res) => {
     return res.redirect("/");
   }
 
-  const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+  const images = [
+    "images/image1.jpg",
+    "images/image2.jpg",
+    "images/image3.jpg",
+  ];
   const randomImage = images[Math.floor(Math.random() * images.length)];
 
   res.send(`
