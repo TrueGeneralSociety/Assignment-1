@@ -171,16 +171,12 @@ app.get("/members", (req, res) => {
     return res.redirect("/");
   }
 
-  const images = [
-    "images/image1.jpg",
-    "images/image2.jpg",
-    "images/image3.jpg",
-  ];
+  const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
   const randomImage = images[Math.floor(Math.random() * images.length)];
 
   res.send(`
-    <h1>Hello, ${req.session.name}.</h1>
-    <img src="/${randomImage}" alt="Random image" style="max-width:400px;" /><br><br>
+    <h1>Welcome to the members area, ${req.session.name}!</h1>
+    <img src="/images/${randomImage}" alt="Random image" style="max-width:400px;" /><br><br>
     <button onclick="window.location.href='/logout'">Sign out</button>
   `);
 });
